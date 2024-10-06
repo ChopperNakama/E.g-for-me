@@ -1,0 +1,27 @@
+//Un codigo que me permite ingresar un valor especificamente un valor string que sea entre 5 y 10 para luego convertirlo en int, si pongo otro tipo de valor no me dejara avanzar.
+string? answer;
+bool validEntry = false;
+Console.WriteLine("Enter an integer value between 5 and 10");
+int number = 0;
+do
+{
+    answer = Console.ReadLine();
+    if(int.TryParse(answer, out number))
+    {
+        if(number >= 5 && number <= 10)
+        {
+            Console.WriteLine($"your input value ({number}) has been accepted");
+            validEntry = true;
+        }
+        else
+        {
+            Console.WriteLine($"You entered {number}. Please enter a number between 5 and 10");
+        }
+    }
+    else
+    {
+        Console.WriteLine($"Sorry, you entered an invalid number, please try again");
+    }
+
+
+}while(validEntry == false);
